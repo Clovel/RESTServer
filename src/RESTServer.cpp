@@ -248,6 +248,8 @@ bool RESTServer::processClientMessage(const char * const pMsg, const size_t &pRe
         << "        Raw : " << std::endl << lHTTPRequest->msg() << std::endl
         << "        Method     : " << lHTTPRequest->methodStr() << std::endl
         << "        URL        : " << lHTTPRequest->URL() << std::endl
+        << "        Path       : " << lHTTPRequest->path() << std::endl
+        << "        Query      : " << lHTTPRequest->query() << std::endl
         << "        HTTPV      : " << lHTTPRequest->httpVersionStr() << std::endl
         << "        Host       : " << lHTTPRequest->host() << std::endl
         << "        User-Agent : " << lHTTPRequest->userAgent() << std::endl
@@ -256,13 +258,18 @@ bool RESTServer::processClientMessage(const char * const pMsg, const size_t &pRe
 
     int lSentBytes = 0;
     std::string lResponse = "";
+    HttpStatus lStatus = HttpStatus::UNKNOWN;
     switch(lHTTPRequest->method()) {
         case HTTP_METHOD_GET:
             std::cout << "[DEBUG] <RESTServer::processClientMessage> Got GET request from client" << std::endl;
 
-            /* Build response */
-            lResponse = std::string(htmlResponseCode200) + "\r\n";
-            getCallback()(lHTTPRequest->queries(), lResponse);
+            /* Get through the REST Callback */
+            lStatus = getCallback()(lHTTPRequest->path(), lHTTPRequest->queries(), lResponse);
+
+            /* Build HTTP header */
+            lResponse = buildHeader(lHTTPRequest->httpVersionStr(), lStatus) + "\r\n" + lResponse;
+
+            std::cout << "[DEBUG] <RESTServer::processClientMessage> Response is :" << std::endl << lResponse << std::endl;
 
             lSentBytes = send(pClientSocket, lResponse.c_str(), std::strlen(lResponse.c_str()), 0);
             if(0 > lSentBytes) {

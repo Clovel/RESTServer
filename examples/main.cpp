@@ -33,8 +33,9 @@ static void printUsage(const char * const pProgName)
 }
 
 /* REST Test callbacks */
-static RESTServer::methodFct_t sGetCallback = [](const std::vector<std::string> &pQueries, std::string &pOut) -> HttpStatus {
+static RESTServer::methodFct_t sGetCallback = [](const std::string &pPath, const std::vector<std::string> &pQueries, std::string &pOut) -> HttpStatus {
     pOut += "{\r\n";
+    pOut += "\t\"Path\": \"" + pPath + "\"\r\n";
 
     for(uint8_t i = 0U; i < pQueries.size(); i++) {
         pOut += "\t\"" + pQueries.at(i) + "\": \"received\"";

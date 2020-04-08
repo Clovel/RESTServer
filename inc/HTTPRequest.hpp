@@ -79,6 +79,7 @@ class HTTPRequest {
         httpVersion_t            httpVersion(void) const;
         std::string              host(void) const;
         std::string              URL(void) const;
+        std::string              path(void) const;
         std::string              userAgent(void) const;
         std::string              accept(void) const;
         std::string              acceptLanguage(void) const;
@@ -113,6 +114,7 @@ class HTTPRequest {
         std::string mMethodStr;                 /**< HTTP method */
         std::string mHTTPVersionStr;            /**< HTTP Version */
         std::string mURL;                       /**< HTTP URL */
+        std::string mPath;                      /**< HTTP Path (URL withour queries) */
         std::string mHost;                      /**< HTTP Host */
         std::string mUserAgent;                 /**< HTTP Client user agent */
         std::string mAccept;                    /**< HTTP Accept field */

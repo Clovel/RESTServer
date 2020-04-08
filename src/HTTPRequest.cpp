@@ -120,6 +120,9 @@ HTTPRequest::HTTPRequest(const std::string &pMsg) :
     /* Get the HTTP version */
     lPos1 = lPos2 + 1;
     lPos2 = mMsg.find('\n', lPos1);
+    if(lPos2 == mMsg.find('\r') + 1U) {
+        --lPos2;
+    }
     std::cout << "[DEBUG] Host : lPos1 : " << lPos1 << ", lPos2 : " << lPos2 << std::endl;
     mHTTPVersionStr = mMsg.substr(lPos1, lPos2 - lPos1);
 
@@ -127,6 +130,9 @@ HTTPRequest::HTTPRequest(const std::string &pMsg) :
     lPos1 = lPos2 + 1;
     lPos1 = mMsg.find("Host: ", lPos1) + std::string("Host: ").size();
     lPos2 = mMsg.find('\n', lPos1);
+    if(lPos2 == mMsg.find('\r') + 1U) {
+        --lPos2;
+    }
     std::cout << "[DEBUG] Host : lPos1 : " << lPos1 << ", lPos2 : " << lPos2 << std::endl;
     mHost = mMsg.substr(lPos1, lPos2 - lPos1);
 
@@ -134,6 +140,9 @@ HTTPRequest::HTTPRequest(const std::string &pMsg) :
     lPos1 = lPos2 + 1;
     lPos1 = mMsg.find("User-Agent: ", lPos1) + std::string("User-Agent: ").size();
     lPos2 = mMsg.find('\n', lPos1);
+    if(lPos2 == mMsg.find('\r') + 1U) {
+        --lPos2;
+    }
     std::cout << "[DEBUG] Host : lPos1 : " << lPos1 << ", lPos2 : " << lPos2 << std::endl;
     mUserAgent = mMsg.substr(lPos1, lPos2 - lPos1);
 
@@ -141,6 +150,9 @@ HTTPRequest::HTTPRequest(const std::string &pMsg) :
     lPos1 = lPos2 + 1;
     lPos1 = mMsg.find("Accept: ", lPos1) + std::string("Accept: ").size();
     lPos2 = mMsg.find('\n', lPos1);
+    if(lPos2 == mMsg.find('\r') + 1U) {
+        --lPos2;
+    }
     std::cout << "[DEBUG] Host : lPos1 : " << lPos1 << ", lPos2 : " << lPos2 << std::endl;
     mAccept = mMsg.substr(lPos1, lPos2 - lPos1);
 }
@@ -172,6 +184,10 @@ httpVersion_t HTTPRequest::httpVersion(void) const {
 
 std::string HTTPRequest::URL(void) const {
     return mURL;
+}
+
+std::string HTTPRequest::path(void) const {
+    return mPath;
 }
 
 std::string HTTPRequest::host(void) const {
@@ -237,6 +253,7 @@ void HTTPRequest::parseURL(void) {
     if(std::string::npos != lPos1) {
         /* Found query */
         mQuery = mURL.substr(lPos1 + 1); /* + 1 to discard the '?' */
+        mPath  = mURL.substr(0U, lPos1);
         //std::cout << "[DEBUG] <HTTPRequest::parseURL> mQuery = " << mQuery << std::endl;
 
         /* Split query for each '&' found */
@@ -268,5 +285,7 @@ void HTTPRequest::parseURL(void) {
 
             lPos1 = ++lPos2;
         }
+    } else {
+        mPath = mURL;
     }
 }

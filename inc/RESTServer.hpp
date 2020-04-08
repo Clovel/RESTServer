@@ -44,7 +44,7 @@ class RESTServer {
          * 
          * @return Returns a HTTP status code
          */
-        using methodFct_t = std::function<HttpStatus(const std::vector<std::string> &pQueries, std::string &pOut)>;
+        using methodFct_t = std::function<HttpStatus(const std::string &pPath, const std::vector<std::string> &pQueries, std::string &pOut)>;
 
         /* Contructors */
         RESTServer(const std::string &pAddr, const std::string pPort, const std::string &pPath);

@@ -11,6 +11,7 @@
 
 /* C++ system */
 #include <string>
+#include <iostream> /* For debug purposes */
 
 /* Defines --------------------------------------------- */
 
@@ -18,6 +19,8 @@
 
 /* Build header functions ------------------------------ */
 std::string buildHeader(const std::string &pHTTPVersion, const HttpStatus &pStatus) {
+
+    std::cout << "[DEBUG] <buildHeader> pHTTPVersion = " << pHTTPVersion << ", pStatus = " << toStr(pStatus) << std::endl;
     std::string lHeader = pHTTPVersion + " " + std::to_string((uint16_t)pStatus) + " ";
 
     lHeader += toStr(pStatus);
