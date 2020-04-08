@@ -33,10 +33,18 @@ static void printUsage(const char * const pProgName)
 }
 
 /* REST Test callbacks */
-static RESTServer::methodFct_t sGetCallback = [](std::vector<std::string> &pQueries, std::string &pOut) -> bool {
-    (void)pQueries;
+static RESTServer::methodFct_t sGetCallback = [](const std::vector<std::string> &pQueries, std::string &pOut) -> bool {
+    pOut += "{\r\n";
 
-    pOut += "{\"ACK\": true}\r\n";
+    for(uint8_t i = 0U; i < pQueries.size(); i++) {
+        pOut += "\t\"" + pQueries.at(i) + "\": \"received\"";
+        if(pQueries.size() - 1U != i) {
+            pOut += ",";
+        }
+        pOut += "\r\n";
+    }
+
+    pOut += "}\r\n";
 
     return true;
 };
