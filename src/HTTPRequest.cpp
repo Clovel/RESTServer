@@ -94,7 +94,6 @@ static httpMethod_t strToHTTPMethod(const std::string &pStr) {
     }
 }
 
-
 /* HTTPRequest class implementation -------------------- */
 HTTPRequest::HTTPRequest(const std::string &pMsg) :
     mMsg(pMsg)
@@ -116,6 +115,7 @@ HTTPRequest::HTTPRequest(const std::string &pMsg) :
     lPos2 = mMsg.find(' ', lPos1);
     std::cout << "[DEBUG] URL : lPos1 : " << lPos1 << ", lPos2 : " << lPos2 << std::endl;
     mURL = mMsg.substr(lPos1, lPos2 - lPos1);
+    (void)parseURL();
 
     /* Get the HTTP version */
     lPos1 = lPos2 + 1;
@@ -224,3 +224,44 @@ std::string HTTPRequest::payload(void) const {
 }
 
 /* Setters */
+
+/* Parsing methods */
+void HTTPRequest::parseURL(void) {
+    /* Get query string */
+    size_t lPos1 = mURL.find('?');
+    if(std::string::npos != lPos1) {
+        /* Found query */
+        mQuery = mURL.substr(lPos1 + 1); /* + 1 to discard the '?' */
+        //std::cout << "[DEBUG] <HTTPRequest::parseURL> mQuery = " << mQuery << std::endl;
+
+        /* Split query for each '&' found */
+        std::string lSubQuery = "";
+        lPos1 = 0;
+        size_t lPos2 = 0;
+        uint8_t i = 0U;
+        while(true) {
+            lPos2 = mQuery.find('&', lPos1);
+            //std::cout << "[DEBUG] <HTTPRequest::parseURL> lPos1 = " << lPos1 << ", lPos2 = " << lPos2 << std::endl;
+            if(std::string::npos == lPos2) {
+                /* No more '&'s left */
+                lSubQuery = mQuery.substr(lPos1);
+                if(!lSubQuery.empty()) {
+                    mQueries.push_back(lSubQuery);
+                    //std::cout << "[DEBUG] <HTTPRequest::parseURL> mQueries[" << (uint16_t)i <<"] = " << mQueries[i] << std::endl;
+                    ++i;
+                }
+
+                break;
+            }
+
+            lSubQuery = mQuery.substr(lPos1, lPos2 - lPos1);
+            if(!lSubQuery.empty()) {
+                mQueries.push_back(lSubQuery);
+                //std::cout << "[DEBUG] <HTTPRequest::parseURL> mQueries[" << (uint16_t)i <<"] = " << mQueries[i] << std::endl;
+                ++i;
+            }
+
+            lPos1 = ++lPos2;
+        }
+    }
+}

@@ -72,24 +72,25 @@ class HTTPRequest {
         virtual ~HTTPRequest();
 
         /* Getters */
-        std::string     msg(void) const;
-        std::string     methodStr(void) const;
-        httpMethod_t    method(void) const;
-        std::string     httpVersionStr(void) const;
-        httpVersion_t   httpVersion(void) const;
-        std::string     host(void) const;
-        std::string     URL(void) const;
-        std::string     userAgent(void) const;
-        std::string     accept(void) const;
-        std::string     acceptLanguage(void) const;
-        std::string     acceptEncoding(void) const;
-        std::string     referer(void) const;
-        std::string     upgradeInsecureRequest(void) const;
-        std::string     headers(void) const;
-        std::string     URI(void) const;
-        std::string     query(void) const;
-        httpBody_t      body(void) const;
-        std::string     payload(void) const;
+        std::string              msg(void) const;
+        std::string              methodStr(void) const;
+        httpMethod_t             method(void) const;
+        std::string              httpVersionStr(void) const;
+        httpVersion_t            httpVersion(void) const;
+        std::string              host(void) const;
+        std::string              URL(void) const;
+        std::string              userAgent(void) const;
+        std::string              accept(void) const;
+        std::string              acceptLanguage(void) const;
+        std::string              acceptEncoding(void) const;
+        std::string              referer(void) const;
+        std::string              upgradeInsecureRequest(void) const;
+        std::string              headers(void) const;
+        std::string              URI(void) const;
+        std::string              query(void) const;
+        std::vector<std::string> queries(void) const;
+        httpBody_t               body(void) const;
+        std::string              payload(void) const;
 
         /* Setters */
         /* TODO */
@@ -104,6 +105,9 @@ class HTTPRequest {
 
     protected:
     private:
+        /* Parsing methods */
+        void parseURL(void);
+
         /* Request contents */
         std::string mMsg;                       /**< Raw message received */
         std::string mMethodStr;                 /**< HTTP method */
@@ -118,7 +122,8 @@ class HTTPRequest {
         std::string mUpgradeInsecureRequest;    /**< HTTP UpgradeInsecureRequest flag */
         std::string mHeaders;                   /**< HTTP Headers */
         std::string mURI;                       /**< HTTP URI */
-        std::string mQuery;                     /**< HTTP Query */
+        std::string mQuery;                     /**< HTTP Queries */
+        std::vector<std::string> mQueries;      /**< HTTP Query */
         httpBody_t  mBody;                      /**< HTTP Body */
         std::string mPayload;                   /**< HTTP payload */
 };
