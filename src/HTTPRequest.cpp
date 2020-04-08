@@ -215,6 +215,11 @@ std::string HTTPRequest::query(void) const {
     return mQuery;
 }
 
+
+std::vector<std::string> HTTPRequest::queries(void) const {
+    return mQueries;
+}
+
 httpBody_t HTTPRequest::body(void) const {
     return mBody;
 }
