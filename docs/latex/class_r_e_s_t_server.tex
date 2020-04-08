@@ -1,0 +1,183 @@
+\hypertarget{class_r_e_s_t_server}{}\doxysection{R\+E\+S\+T\+Server Class Reference}
+\label{class_r_e_s_t_server}\index{RESTServer@{RESTServer}}
+
+
+{\ttfamily \#include $<$R\+E\+S\+T\+Server.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{class_r_e_s_t_server_afece1e9a3fb535f42fc32402380779b9}{method\+Fct\+\_\+t}} = std\+::function$<$ bool(const std\+::string \&, std\+::string \&)$>$
+\begin{DoxyCompactList}\small\item\em Callback type for the R\+E\+ST A\+PI methods. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_r_e_s_t_server_a5504186ce3618508d74b7e5208469ffb}{R\+E\+S\+T\+Server}} (const std\+::string \&p\+Addr, const std\+::string p\+Port, const std\+::string \&p\+Path)
+\item 
+virtual \mbox{\hyperlink{class_r_e_s_t_server_a9ca2896b39ace28835428af40ed9eaee}{$\sim$\+R\+E\+S\+T\+Server}} ()
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{class_r_e_s_t_server}{R\+E\+S\+T\+Server}} class destructor. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_r_e_s_t_server_a7d4c68650057155ec71e92f1e57f890d}{address}} (void) const
+\item 
+std\+::string \mbox{\hyperlink{class_r_e_s_t_server_a0118d97dfd0563f9db38d98c9c8338e2}{port}} (void) const
+\item 
+std\+::string \mbox{\hyperlink{class_r_e_s_t_server_aeb71bc3e73dad8b8b5d2b43ec0953eaf}{api\+Path}} (void) const
+\item 
+\mbox{\hyperlink{class_r_e_s_t_server_afece1e9a3fb535f42fc32402380779b9}{method\+Fct\+\_\+t}} \mbox{\hyperlink{class_r_e_s_t_server_a24a232018975da528dcc0ef81f5bc969}{get\+Callback}} (void) const
+\item 
+\mbox{\hyperlink{class_r_e_s_t_server_afece1e9a3fb535f42fc32402380779b9}{method\+Fct\+\_\+t}} \mbox{\hyperlink{class_r_e_s_t_server_aa1b73cf343559b6eab616de2ee6b4a7f}{post\+Callback}} (void) const
+\item 
+\mbox{\hyperlink{class_r_e_s_t_server_afece1e9a3fb535f42fc32402380779b9}{method\+Fct\+\_\+t}} \mbox{\hyperlink{class_r_e_s_t_server_ad9ad5913b82d5bf525d22e51aef95e6e}{put\+Callback}} (void) const
+\item 
+\mbox{\hyperlink{class_r_e_s_t_server_afece1e9a3fb535f42fc32402380779b9}{method\+Fct\+\_\+t}} \mbox{\hyperlink{class_r_e_s_t_server_ad2661903c1fa6554f9b43b93940a2f50}{del\+Callback}} (void) const
+\item 
+void \mbox{\hyperlink{class_r_e_s_t_server_ad20a7bf39c1f7b02f3d3f0ad6fb27072}{set\+Get\+Callback}} (const \mbox{\hyperlink{class_r_e_s_t_server_afece1e9a3fb535f42fc32402380779b9}{method\+Fct\+\_\+t}} \&p\+Fct)
+\item 
+void \mbox{\hyperlink{class_r_e_s_t_server_a37fa05b43173217d82fe4335865c5e85}{set\+Post\+Callback}} (const \mbox{\hyperlink{class_r_e_s_t_server_afece1e9a3fb535f42fc32402380779b9}{method\+Fct\+\_\+t}} \&p\+Fct)
+\item 
+void \mbox{\hyperlink{class_r_e_s_t_server_a865a5a48bd9183a4eb0535212a89ddc8}{set\+Put\+Callback}} (const \mbox{\hyperlink{class_r_e_s_t_server_afece1e9a3fb535f42fc32402380779b9}{method\+Fct\+\_\+t}} \&p\+Fct)
+\item 
+void \mbox{\hyperlink{class_r_e_s_t_server_a14c5f9ed209b2f028d855152477f3351}{set\+Del\+Callback}} (const \mbox{\hyperlink{class_r_e_s_t_server_afece1e9a3fb535f42fc32402380779b9}{method\+Fct\+\_\+t}} \&p\+Fct)
+\item 
+bool \mbox{\hyperlink{class_r_e_s_t_server_a3e28da63d01dbf24f2e9a773a29d7e0d}{open}} (void)
+\item 
+bool \mbox{\hyperlink{class_r_e_s_t_server_af9d4cd27ae53670b482365f28a73b2c7}{listen}} (void)
+\item 
+bool \mbox{\hyperlink{class_r_e_s_t_server_a2292f51203d70805a6ffb38707421844}{close}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{class_r_e_s_t_server_afece1e9a3fb535f42fc32402380779b9}\label{class_r_e_s_t_server_afece1e9a3fb535f42fc32402380779b9}} 
+\index{RESTServer@{RESTServer}!methodFct\_t@{methodFct\_t}}
+\index{methodFct\_t@{methodFct\_t}!RESTServer@{RESTServer}}
+\doxysubsubsection{\texorpdfstring{methodFct\_t}{methodFct\_t}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{class_r_e_s_t_server_afece1e9a3fb535f42fc32402380779b9}{R\+E\+S\+T\+Server\+::method\+Fct\+\_\+t}} =  std\+::function$<$bool(const std\+::string \&, std\+::string \&)$>$}
+
+
+
+Callback type for the R\+E\+ST A\+PI methods. 
+
+A method callback provides a way to build the response to a certain method.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em p\+Msg} & The request. \\
+\hline
+\mbox{\texttt{ out}}  & {\em p\+Out} & The output string \+: the response.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if successful, false elsewise 
+\end{DoxyReturn}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_r_e_s_t_server_a5504186ce3618508d74b7e5208469ffb}\label{class_r_e_s_t_server_a5504186ce3618508d74b7e5208469ffb}} 
+\index{RESTServer@{RESTServer}!RESTServer@{RESTServer}}
+\index{RESTServer@{RESTServer}!RESTServer@{RESTServer}}
+\doxysubsubsection{\texorpdfstring{RESTServer()}{RESTServer()}}
+{\footnotesize\ttfamily R\+E\+S\+T\+Server\+::\+R\+E\+S\+T\+Server (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{p\+Addr,  }\item[{const std\+::string}]{p\+Port,  }\item[{const std\+::string \&}]{p\+Path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_r_e_s_t_server_a9ca2896b39ace28835428af40ed9eaee}\label{class_r_e_s_t_server_a9ca2896b39ace28835428af40ed9eaee}} 
+\index{RESTServer@{RESTServer}!````~RESTServer@{$\sim$RESTServer}}
+\index{````~RESTServer@{$\sim$RESTServer}!RESTServer@{RESTServer}}
+\doxysubsubsection{\texorpdfstring{$\sim$RESTServer()}{~RESTServer()}}
+{\footnotesize\ttfamily R\+E\+S\+T\+Server\+::$\sim$\+R\+E\+S\+T\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+The \mbox{\hyperlink{class_r_e_s_t_server}{R\+E\+S\+T\+Server}} class destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_r_e_s_t_server_a7d4c68650057155ec71e92f1e57f890d}\label{class_r_e_s_t_server_a7d4c68650057155ec71e92f1e57f890d}} 
+\index{RESTServer@{RESTServer}!address@{address}}
+\index{address@{address}!RESTServer@{RESTServer}}
+\doxysubsubsection{\texorpdfstring{address()}{address()}}
+{\footnotesize\ttfamily std\+::string R\+E\+S\+T\+Server\+::address (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_r_e_s_t_server_aeb71bc3e73dad8b8b5d2b43ec0953eaf}\label{class_r_e_s_t_server_aeb71bc3e73dad8b8b5d2b43ec0953eaf}} 
+\index{RESTServer@{RESTServer}!apiPath@{apiPath}}
+\index{apiPath@{apiPath}!RESTServer@{RESTServer}}
+\doxysubsubsection{\texorpdfstring{apiPath()}{apiPath()}}
+{\footnotesize\ttfamily std\+::string R\+E\+S\+T\+Server\+::api\+Path (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_r_e_s_t_server_a2292f51203d70805a6ffb38707421844}\label{class_r_e_s_t_server_a2292f51203d70805a6ffb38707421844}} 
+\index{RESTServer@{RESTServer}!close@{close}}
+\index{close@{close}!RESTServer@{RESTServer}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily bool R\+E\+S\+T\+Server\+::close (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_r_e_s_t_server_ad2661903c1fa6554f9b43b93940a2f50}\label{class_r_e_s_t_server_ad2661903c1fa6554f9b43b93940a2f50}} 
+\index{RESTServer@{RESTServer}!delCallback@{delCallback}}
+\index{delCallback@{delCallback}!RESTServer@{RESTServer}}
+\doxysubsubsection{\texorpdfstring{delCallback()}{delCallback()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_r_e_s_t_server_afece1e9a3fb535f42fc32402380779b9}{R\+E\+S\+T\+Server\+::method\+Fct\+\_\+t}} R\+E\+S\+T\+Server\+::del\+Callback (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_r_e_s_t_server_a24a232018975da528dcc0ef81f5bc969}\label{class_r_e_s_t_server_a24a232018975da528dcc0ef81f5bc969}} 
+\index{RESTServer@{RESTServer}!getCallback@{getCallback}}
+\index{getCallback@{getCallback}!RESTServer@{RESTServer}}
+\doxysubsubsection{\texorpdfstring{getCallback()}{getCallback()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_r_e_s_t_server_afece1e9a3fb535f42fc32402380779b9}{R\+E\+S\+T\+Server\+::method\+Fct\+\_\+t}} R\+E\+S\+T\+Server\+::get\+Callback (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_r_e_s_t_server_af9d4cd27ae53670b482365f28a73b2c7}\label{class_r_e_s_t_server_af9d4cd27ae53670b482365f28a73b2c7}} 
+\index{RESTServer@{RESTServer}!listen@{listen}}
+\index{listen@{listen}!RESTServer@{RESTServer}}
+\doxysubsubsection{\texorpdfstring{listen()}{listen()}}
+{\footnotesize\ttfamily bool R\+E\+S\+T\+Server\+::listen (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_r_e_s_t_server_a3e28da63d01dbf24f2e9a773a29d7e0d}\label{class_r_e_s_t_server_a3e28da63d01dbf24f2e9a773a29d7e0d}} 
+\index{RESTServer@{RESTServer}!open@{open}}
+\index{open@{open}!RESTServer@{RESTServer}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily bool R\+E\+S\+T\+Server\+::open (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_r_e_s_t_server_a0118d97dfd0563f9db38d98c9c8338e2}\label{class_r_e_s_t_server_a0118d97dfd0563f9db38d98c9c8338e2}} 
+\index{RESTServer@{RESTServer}!port@{port}}
+\index{port@{port}!RESTServer@{RESTServer}}
+\doxysubsubsection{\texorpdfstring{port()}{port()}}
+{\footnotesize\ttfamily std\+::string R\+E\+S\+T\+Server\+::port (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_r_e_s_t_server_aa1b73cf343559b6eab616de2ee6b4a7f}\label{class_r_e_s_t_server_aa1b73cf343559b6eab616de2ee6b4a7f}} 
+\index{RESTServer@{RESTServer}!postCallback@{postCallback}}
+\index{postCallback@{postCallback}!RESTServer@{RESTServer}}
+\doxysubsubsection{\texorpdfstring{postCallback()}{postCallback()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_r_e_s_t_server_afece1e9a3fb535f42fc32402380779b9}{R\+E\+S\+T\+Server\+::method\+Fct\+\_\+t}} R\+E\+S\+T\+Server\+::post\+Callback (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_r_e_s_t_server_ad9ad5913b82d5bf525d22e51aef95e6e}\label{class_r_e_s_t_server_ad9ad5913b82d5bf525d22e51aef95e6e}} 
+\index{RESTServer@{RESTServer}!putCallback@{putCallback}}
+\index{putCallback@{putCallback}!RESTServer@{RESTServer}}
+\doxysubsubsection{\texorpdfstring{putCallback()}{putCallback()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_r_e_s_t_server_afece1e9a3fb535f42fc32402380779b9}{R\+E\+S\+T\+Server\+::method\+Fct\+\_\+t}} R\+E\+S\+T\+Server\+::put\+Callback (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_r_e_s_t_server_a14c5f9ed209b2f028d855152477f3351}\label{class_r_e_s_t_server_a14c5f9ed209b2f028d855152477f3351}} 
+\index{RESTServer@{RESTServer}!setDelCallback@{setDelCallback}}
+\index{setDelCallback@{setDelCallback}!RESTServer@{RESTServer}}
+\doxysubsubsection{\texorpdfstring{setDelCallback()}{setDelCallback()}}
+{\footnotesize\ttfamily void R\+E\+S\+T\+Server\+::set\+Del\+Callback (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_r_e_s_t_server_afece1e9a3fb535f42fc32402380779b9}{method\+Fct\+\_\+t}} \&}]{p\+Fct }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_r_e_s_t_server_ad20a7bf39c1f7b02f3d3f0ad6fb27072}\label{class_r_e_s_t_server_ad20a7bf39c1f7b02f3d3f0ad6fb27072}} 
+\index{RESTServer@{RESTServer}!setGetCallback@{setGetCallback}}
+\index{setGetCallback@{setGetCallback}!RESTServer@{RESTServer}}
+\doxysubsubsection{\texorpdfstring{setGetCallback()}{setGetCallback()}}
+{\footnotesize\ttfamily void R\+E\+S\+T\+Server\+::set\+Get\+Callback (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_r_e_s_t_server_afece1e9a3fb535f42fc32402380779b9}{method\+Fct\+\_\+t}} \&}]{p\+Fct }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_r_e_s_t_server_a37fa05b43173217d82fe4335865c5e85}\label{class_r_e_s_t_server_a37fa05b43173217d82fe4335865c5e85}} 
+\index{RESTServer@{RESTServer}!setPostCallback@{setPostCallback}}
+\index{setPostCallback@{setPostCallback}!RESTServer@{RESTServer}}
+\doxysubsubsection{\texorpdfstring{setPostCallback()}{setPostCallback()}}
+{\footnotesize\ttfamily void R\+E\+S\+T\+Server\+::set\+Post\+Callback (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_r_e_s_t_server_afece1e9a3fb535f42fc32402380779b9}{method\+Fct\+\_\+t}} \&}]{p\+Fct }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_r_e_s_t_server_a865a5a48bd9183a4eb0535212a89ddc8}\label{class_r_e_s_t_server_a865a5a48bd9183a4eb0535212a89ddc8}} 
+\index{RESTServer@{RESTServer}!setPutCallback@{setPutCallback}}
+\index{setPutCallback@{setPutCallback}!RESTServer@{RESTServer}}
+\doxysubsubsection{\texorpdfstring{setPutCallback()}{setPutCallback()}}
+{\footnotesize\ttfamily void R\+E\+S\+T\+Server\+::set\+Put\+Callback (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_r_e_s_t_server_afece1e9a3fb535f42fc32402380779b9}{method\+Fct\+\_\+t}} \&}]{p\+Fct }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_r_e_s_t_server_8hpp}{R\+E\+S\+T\+Server.\+hpp}}\item 
+\mbox{\hyperlink{_r_e_s_t_server_8cpp}{R\+E\+S\+T\+Server.\+cpp}}\end{DoxyCompactItemize}

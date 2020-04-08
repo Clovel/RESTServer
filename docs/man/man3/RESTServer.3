@@ -1,0 +1,133 @@
+.TH "RESTServer" 3 "Wed Apr 8 2020" "Version .." "RESTServer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RESTServer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <RESTServer\&.hpp>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "using \fBmethodFct_t\fP = std::function< bool(const std::string &, std::string &)>"
+.br
+.RI "Callback type for the REST API methods\&. "
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRESTServer\fP (const std::string &pAddr, const std::string pPort, const std::string &pPath)"
+.br
+.ti -1c
+.RI "virtual \fB~RESTServer\fP ()"
+.br
+.RI "The \fBRESTServer\fP class destructor\&. "
+.ti -1c
+.RI "std::string \fBaddress\fP (void) const"
+.br
+.ti -1c
+.RI "std::string \fBport\fP (void) const"
+.br
+.ti -1c
+.RI "std::string \fBapiPath\fP (void) const"
+.br
+.ti -1c
+.RI "\fBmethodFct_t\fP \fBgetCallback\fP (void) const"
+.br
+.ti -1c
+.RI "\fBmethodFct_t\fP \fBpostCallback\fP (void) const"
+.br
+.ti -1c
+.RI "\fBmethodFct_t\fP \fBputCallback\fP (void) const"
+.br
+.ti -1c
+.RI "\fBmethodFct_t\fP \fBdelCallback\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBsetGetCallback\fP (const \fBmethodFct_t\fP &pFct)"
+.br
+.ti -1c
+.RI "void \fBsetPostCallback\fP (const \fBmethodFct_t\fP &pFct)"
+.br
+.ti -1c
+.RI "void \fBsetPutCallback\fP (const \fBmethodFct_t\fP &pFct)"
+.br
+.ti -1c
+.RI "void \fBsetDelCallback\fP (const \fBmethodFct_t\fP &pFct)"
+.br
+.ti -1c
+.RI "bool \fBopen\fP (void)"
+.br
+.ti -1c
+.RI "bool \fBlisten\fP (void)"
+.br
+.ti -1c
+.RI "bool \fBclose\fP (void)"
+.br
+.in -1c
+.SH "Member Typedef Documentation"
+.PP 
+.SS "using \fBRESTServer::methodFct_t\fP =  std::function<bool(const std::string &, std::string &)>"
+
+.PP
+Callback type for the REST API methods\&. A method callback provides a way to build the response to a certain method\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIpMsg\fP The request\&. 
+.br
+\fIpOut\fP The output string : the response\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Returns true if successful, false elsewise 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RESTServer::RESTServer (const std::string & pAddr, const std::string pPort, const std::string & pPath)"
+
+.SS "RESTServer::~RESTServer ()\fC [virtual]\fP"
+
+.PP
+The \fBRESTServer\fP class destructor\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "std::string RESTServer::address (void) const"
+
+.SS "std::string RESTServer::apiPath (void) const"
+
+.SS "bool RESTServer::close (void)"
+
+.SS "\fBRESTServer::methodFct_t\fP RESTServer::delCallback (void) const"
+
+.SS "\fBRESTServer::methodFct_t\fP RESTServer::getCallback (void) const"
+
+.SS "bool RESTServer::listen (void)"
+
+.SS "bool RESTServer::open (void)"
+
+.SS "std::string RESTServer::port (void) const"
+
+.SS "\fBRESTServer::methodFct_t\fP RESTServer::postCallback (void) const"
+
+.SS "\fBRESTServer::methodFct_t\fP RESTServer::putCallback (void) const"
+
+.SS "void RESTServer::setDelCallback (const \fBmethodFct_t\fP & pFct)"
+
+.SS "void RESTServer::setGetCallback (const \fBmethodFct_t\fP & pFct)"
+
+.SS "void RESTServer::setPostCallback (const \fBmethodFct_t\fP & pFct)"
+
+.SS "void RESTServer::setPutCallback (const \fBmethodFct_t\fP & pFct)"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RESTServer from the source code\&.

@@ -1,0 +1,105 @@
+.TH "HTTPRequest.hpp" 3 "Wed Apr 8 2020" "Version .." "RESTServer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HTTPRequest.hpp \- \fBHTTPRequest\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <exception>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <vector>\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "class \fBHTTPRequestException\fP"
+.br
+.ti -1c
+.RI "class \fBHTTPRequest\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef enum \fB_httpVersion\fP \fBhttpVersion_t\fP"
+.br
+.ti -1c
+.RI "typedef enum \fB_httpMethods\fP \fBhttpMethod_t\fP"
+.br
+.ti -1c
+.RI "typedef std::vector< std::string > \fBhttpBody_t\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fB_httpVersion\fP { \fBHTTP_VERSION_UNKNOWN\fP = 0U, \fBHTTP_VERSION_1_0\fP, \fBHTTP_VERSION_1_1\fP, \fBHTTP_VERSION_2_0\fP }"
+.br
+.ti -1c
+.RI "enum \fB_httpMethods\fP { \fBHTTP_METHOD_UNKNOWN\fP = 0U, \fBHTTP_METHOD_GET\fP, \fBHTTP_METHOD_HEAD\fP, \fBHTTP_METHOD_POST\fP, \fBHTTP_METHOD_PUT\fP, \fBHTTP_METHOD_DELETE\fP, \fBHTTP_METHOD_CONNECT\fP, \fBHTTP_METHOD_OPTIONS\fP, \fBHTTP_METHOD_TRACE\fP, \fBHTTP_METHOD_PATCH\fP }"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBHTTPRequest\fP class\&. 
+
+
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef std::vector<std::string> \fBhttpBody_t\fP"
+
+.SS "typedef enum \fB_httpMethods\fP \fBhttpMethod_t\fP"
+
+.SS "typedef enum \fB_httpVersion\fP \fBhttpVersion_t\fP"
+
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fB_httpMethods\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIHTTP_METHOD_UNKNOWN \fP\fP
+.TP
+\fB\fIHTTP_METHOD_GET \fP\fP
+.TP
+\fB\fIHTTP_METHOD_HEAD \fP\fP
+.TP
+\fB\fIHTTP_METHOD_POST \fP\fP
+.TP
+\fB\fIHTTP_METHOD_PUT \fP\fP
+.TP
+\fB\fIHTTP_METHOD_DELETE \fP\fP
+.TP
+\fB\fIHTTP_METHOD_CONNECT \fP\fP
+.TP
+\fB\fIHTTP_METHOD_OPTIONS \fP\fP
+.TP
+\fB\fIHTTP_METHOD_TRACE \fP\fP
+.TP
+\fB\fIHTTP_METHOD_PATCH \fP\fP
+.SS "enum \fB_httpVersion\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIHTTP_VERSION_UNKNOWN \fP\fP
+.TP
+\fB\fIHTTP_VERSION_1_0 \fP\fP
+.TP
+\fB\fIHTTP_VERSION_1_1 \fP\fP
+.TP
+\fB\fIHTTP_VERSION_2_0 \fP\fP
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RESTServer from the source code\&.
