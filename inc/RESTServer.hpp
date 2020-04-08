@@ -37,12 +37,12 @@ class RESTServer {
          * @details A method callback provides a way to build the response
          * to a certain method.
          * 
-         * @param[in]   pMsg    The request.
-         * @param[out]  pOut    The output string : the response.
+         * @param[in]   pQueries    The request.
+         * @param[out]  pOut        The output string : the response.
          * 
          * @return Returns true if successful, false elsewise
          */
-        using methodFct_t = std::function<bool(const std::string &, std::string &)>;
+        using methodFct_t = std::function<bool(const std::vector<std::string> &pQueries, std::string &pOut)>;
 
         /* Contructors */
         RESTServer(const std::string &pAddr, const std::string pPort, const std::string &pPath);

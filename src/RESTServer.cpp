@@ -262,7 +262,7 @@ bool RESTServer::processClientMessage(const char * const pMsg, const size_t &pRe
 
             /* Build response */
             lResponse = std::string(htmlResponseCode200) + "\r\n";
-            getCallback()("{\"ACK\": true}\r\n", lResponse);
+            getCallback()(lHTTPRequest->queries(), lResponse);
 
             lSentBytes = send(pClientSocket, lResponse.c_str(), std::strlen(lResponse.c_str()), 0);
             if(0 > lSentBytes) {

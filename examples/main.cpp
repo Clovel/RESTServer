@@ -10,6 +10,7 @@
 /* C++ system */
 #include <iostream>
 #include <string>
+#include <vector>
 
 /* C system */
 #include <cstring>
@@ -32,8 +33,8 @@ static void printUsage(const char * const pProgName)
 }
 
 /* REST Test callbacks */
-static RESTServer::methodFct_t sGetCallback = [](const std::string &pMsg, std::string &pOut) -> bool {
-    (void)pMsg;
+static RESTServer::methodFct_t sGetCallback = [](std::vector<std::string> &pQueries, std::string &pOut) -> bool {
+    (void)pQueries;
 
     pOut += "{\"ACK\": true}\r\n";
 
