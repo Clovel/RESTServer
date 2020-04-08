@@ -10,6 +10,7 @@
 /* Defines --------------------------------------------- */
 
 /* Variable declarations ------------------------------- */
+
 /* Web page variables ---------------------------------- */
 const char * const htmlResponseCode200 = R"=====(HTTP/1.1 200 OK
 Content-type:text/html

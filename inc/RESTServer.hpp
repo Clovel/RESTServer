@@ -43,7 +43,6 @@ class RESTServer {
          * @return Returns true if successful, false elsewise
          */
         using methodFct_t = std::function<bool(const std::string &, std::string &)>;
-        //using methodFct_t = class lambda []void (const std::__1::string &pMsg, std::__1::string &pOut)->void;
 
         /* Contructors */
         RESTServer(const std::string &pAddr, const std::string pPort, const std::string &pPath);
