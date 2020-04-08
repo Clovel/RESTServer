@@ -7,10 +7,17 @@
 #define WEBPAGES_HPP
 
 /* Includes -------------------------------------------- */
+#include "HTTPStatus.hpp"
+
+/* C++ system */
+#include <string>
 
 /* Defines --------------------------------------------- */
 
 /* Forward declarations -------------------------------- */
+
+/* Build header functions ------------------------------ */
+std::string buildHeader(const std::string &pHTTPVersion, const HttpStatus &pStatus);
 
 /* Variable declarations ------------------------------- */
 extern const char * const htmlResponseCode200;
@@ -25,7 +32,5 @@ extern const char * const htmlPageEnd;
 extern const char * const htmlHead;
 
 extern const char * const htmlGeneralKenobi;
-
-/* Web pages ------------------------------------------- */
 
 #endif /* WEBPAGES_HPP */

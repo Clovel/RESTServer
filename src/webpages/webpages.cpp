@@ -7,9 +7,25 @@
 /* Includes -------------------------------------------- */
 #include "webpages.hpp"
 
+#include "HTTPStatus.hpp"
+
+/* C++ system */
+#include <string>
+
 /* Defines --------------------------------------------- */
 
 /* Variable declarations ------------------------------- */
+
+/* Build header functions ------------------------------ */
+std::string buildHeader(const std::string &pHTTPVersion, const HttpStatus &pStatus) {
+    std::string lHeader = pHTTPVersion + " " + std::to_string((uint16_t)pStatus) + " ";
+
+    lHeader += toStr(pStatus);
+
+    lHeader += "\r\nContent-type:text/html\r\nConnection: close\r\n";
+
+    return lHeader;
+}
 
 /* Web page variables ---------------------------------- */
 const char * const htmlResponseCode200 = R"=====(HTTP/1.1 200 OK

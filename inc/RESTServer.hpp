@@ -8,6 +8,8 @@
 #define RESTSERVER_HPP
 
 /* Includes -------------------------------------------- */
+#include "HTTPStatus.hpp"
+
 /* C++ system */
 #include <exception>
 #include <functional>
@@ -40,9 +42,9 @@ class RESTServer {
          * @param[in]   pQueries    The request.
          * @param[out]  pOut        The output string : the response.
          * 
-         * @return Returns true if successful, false elsewise
+         * @return Returns a HTTP status code
          */
-        using methodFct_t = std::function<bool(const std::vector<std::string> &pQueries, std::string &pOut)>;
+        using methodFct_t = std::function<HttpStatus(const std::vector<std::string> &pQueries, std::string &pOut)>;
 
         /* Contructors */
         RESTServer(const std::string &pAddr, const std::string pPort, const std::string &pPath);

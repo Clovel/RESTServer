@@ -33,7 +33,7 @@ static void printUsage(const char * const pProgName)
 }
 
 /* REST Test callbacks */
-static RESTServer::methodFct_t sGetCallback = [](const std::vector<std::string> &pQueries, std::string &pOut) -> bool {
+static RESTServer::methodFct_t sGetCallback = [](const std::vector<std::string> &pQueries, std::string &pOut) -> HttpStatus {
     pOut += "{\r\n";
 
     for(uint8_t i = 0U; i < pQueries.size(); i++) {
@@ -46,7 +46,7 @@ static RESTServer::methodFct_t sGetCallback = [](const std::vector<std::string> 
 
     pOut += "}\r\n";
 
-    return true;
+    return HttpStatus::OK;
 };
 
 /* ----------------------------------------------------- */
