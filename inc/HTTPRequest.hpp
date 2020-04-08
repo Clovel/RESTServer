@@ -55,7 +55,7 @@ class HTTPRequest {
     public:
         /* Contructors */
         /** 
-         * @breif The HTTPRequest constructor
+         * @brief The HTTPRequest constructor
          * 
          * @details The constructor parses the HTTP request.
          * 

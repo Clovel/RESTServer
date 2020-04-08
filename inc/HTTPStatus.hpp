@@ -15,7 +15,7 @@
 
 /* Type definitions ------------------------------------ */
 /**
- * @breif Enumerates all possible HTTP status codes.
+ * @brief Enumerates all possible HTTP status codes.
  * 
  * @details Sources from [Wikipedia](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
  */
