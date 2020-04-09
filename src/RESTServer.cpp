@@ -269,7 +269,7 @@ bool RESTServer::processClientMessage(const char * const pMsg, const size_t &pRe
             /* Build HTTP header */
             lResponse = buildHeader(lHTTPRequest->httpVersionStr(), lStatus) + "\r\n" + lResponse;
 
-            std::cout << "[DEBUG] <RESTServer::processClientMessage> Response is :" << std::endl << lResponse << std::endl;
+            //std::cout << "[DEBUG] <RESTServer::processClientMessage> Response is :" << std::endl << lResponse << std::endl;
 
             lSentBytes = send(pClientSocket, lResponse.c_str(), std::strlen(lResponse.c_str()), 0);
             if(0 > lSentBytes) {
@@ -282,7 +282,7 @@ bool RESTServer::processClientMessage(const char * const pMsg, const size_t &pRe
 
                 return false;
             } else {
-                std::cout << "[DEBUG] <RESTServer::processClientMessage> Sent " << lSentBytes << " bytes as a response" << std::endl;
+                //std::cout << "[DEBUG] <RESTServer::processClientMessage> Sent " << lSentBytes << " bytes as a response" << std::endl;
             }
             break;
         default:
@@ -295,7 +295,7 @@ bool RESTServer::processClientMessage(const char * const pMsg, const size_t &pRe
                     std::cerr << "        errno = " << errno << " (" << strerror(errno) << ")" << std::endl;
                 }
             } else {
-                std::cout << "[DEBUG] <RESTServer::processClientMessage> Sent " << lSentBytes << " bytes as a response" << std::endl;
+                //std::cout << "[DEBUG] <RESTServer::processClientMessage> Sent " << lSentBytes << " bytes as a response" << std::endl;
             }
 
             delete lHTTPRequest;
